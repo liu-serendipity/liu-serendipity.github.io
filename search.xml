@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>新版VSCode git bash终端配置</title>
+    <url>/2022/01/23/%E6%96%B0%E7%89%88VSCode%20git%20bash%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>当VSCode升级至1.57.1时，会出现警告提示：<br>此项已弃用，配置默认 shell 的新推荐方法是在 #terminal.integrated.profiles.windows# 中创建一个终端配置文件，并将其配置文件名称设置为 #terminal.integrated.defaultProfile.windows# 中的默认值</p>
+<h2 id="官方文档给予的解决方法是将seetings-json下面的"><a href="#官方文档给予的解决方法是将seetings-json下面的" class="headerlink" title="官方文档给予的解决方法是将seetings.json下面的"></a><a href="https://code.visualstudio.com/docs/editor/integrated-terminal">官方文档</a>给予的解决方法是将seetings.json下面的</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;terminal.integrated.shell.windows&quot;</span>: <span class="string">&quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;</span>：</span><br></pre></td></tr></table></figure>
+<p>更改为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;terminal.integrated.profiles.windows&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;cmder&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;path&quot;</span>: <span class="string">&quot;C:\\WINDOWS\\System32\\cmd.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;args&quot;</span>: [<span class="string">&quot;/K&quot;</span>, <span class="string">&quot;C:\\cmder\\vendor\\bin\\vscode_init.cmd&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;terminal.integrated.defaultProfile.windows&quot;</span>: <span class="string">&quot;cmder&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实测依旧报错</p>
+<h2 id="现解决方法"><a href="#现解决方法" class="headerlink" title="现解决方法"></a>现解决方法</h2><p>更改上方代码为以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;terminal.integrated.profiles.windows&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;my-cmd&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;path&quot;</span>: <span class="string">&quot;C:\\Windows\\System32\\cmd.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;args&quot;</span>: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;terminal.integrated.defaultProfile.windows&quot;</span>: <span class="string">&quot;my-cmd&quot;</span>,</span><br></pre></td></tr></table></figure>
+<p>  截至1.64.2版本实测没问题。</p>
+]]></content>
+      <categories>
+        <category>Code</category>
+      </categories>
+  </entry>
+</search>
