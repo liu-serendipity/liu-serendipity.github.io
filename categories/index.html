@@ -23,6 +23,7 @@
   </script>
 
 
+
  <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b6dbddb6.js","daovoice")
  daovoice('init', {
   app_id: "8b451c18"
@@ -37,7 +38,7 @@ daovoice('update');
 <meta property="og:site_name" content="BEIYUE">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-28T03:09:19.000Z">
-<meta property="article:modified_time" content="2022-03-28T06:04:23.802Z">
+<meta property="article:modified_time" content="2022-03-28T06:28:20.263Z">
 <meta property="article:author" content="BEIYUE">
 <meta name="twitter:card" content="summary">
 
@@ -241,6 +242,7 @@ daovoice('update');
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -416,8 +418,8 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
     new Valine({
       el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
+      verify     : true,
+      notify     : true,
       appId      : 'nTz6J7GT0W0VAxurvEVJiVwt-gzGzoHsz',
       appKey     : 'poDwPPqNe6n25okFjGT0e2zQ',
       placeholder: "有什么问题，欢迎留言指正与交流...",
