@@ -34,26 +34,26 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="BEIYUE">
-<meta property="og:url" content="http://yunshenglu.github.io/index.html">
+<meta property="og:url" content="http://yunshenglu.github.io/categories/Code/index.html">
 <meta property="og:site_name" content="BEIYUE">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="BEIYUE">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yunshenglu.github.io/">
+<link rel="canonical" href="http://yunshenglu.github.io/categories/Code/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
+    isHome : false,
     isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>BEIYUE</title>
+  <title>分类: Code | BEIYUE</title>
   
 
 
@@ -168,103 +168,50 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content category">
             
-      
+
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yunshenglu.github.io/2022/01/23/%E6%96%B0%E7%89%88VSCode%20git%20bash%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BEIYUE">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BEIYUE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/23/%E6%96%B0%E7%89%88VSCode%20git%20bash%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">新版VSCode git bash终端配置</a>
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">Code
+          <small>分类</small>
         </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-23 19:33:34" itemprop="dateCreated datePublished" datetime="2022-01-23T19:33:34+08:00">2022-01-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-28 13:19:19" itemprop="dateModified" datetime="2022-03-28T13:19:19+08:00">2022-03-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>918</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      </div>
 
       
-          <p>当VSCode升级至1.57.1时，会出现警告提示：<br>此项已弃用，配置默认 shell 的新推荐方法是在 #terminal.integrated.profiles.windows# 中创建一个终端配置文件，并将其配置文件名称设置为 #terminal.integrated.defaultProfile.windows# 中的默认值</p>
-<h2 id="官方文档给予的解决方法是将seetings-json下面的"><a href="#官方文档给予的解决方法是将seetings-json下面的" class="headerlink" title="官方文档给予的解决方法是将seetings.json下面的"></a><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/integrated-terminal">官方文档</a>给予的解决方法是将seetings.json下面的</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;terminal.integrated.shell.windows&quot;</span>: <span class="string">&quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;</span>：</span><br></pre></td></tr></table></figure>
-<p>更改为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;terminal.integrated.profiles.windows&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;cmder&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;path&quot;</span>: <span class="string">&quot;C:\\WINDOWS\\System32\\cmd.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;args&quot;</span>: [<span class="string">&quot;/K&quot;</span>, <span class="string">&quot;C:\\cmder\\vendor\\bin\\vscode_init.cmd&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;terminal.integrated.defaultProfile.windows&quot;</span>: <span class="string">&quot;cmder&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实测依旧报错</p>
-<h2 id="现解决方法"><a href="#现解决方法" class="headerlink" title="现解决方法"></a>现解决方法</h2><p>更改上方代码为以下代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;terminal.integrated.profiles.windows&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;my-cmd&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;path&quot;</span>: <span class="string">&quot;C:\\Windows\\System32\\cmd.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;args&quot;</span>: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;terminal.integrated.defaultProfile.windows&quot;</span>: <span class="string">&quot;my-cmd&quot;</span>,</span><br></pre></td></tr></table></figure>
-<p>  截至1.64.2版本实测没问题。</p>
-
-      
+    <div class="collection-year">
+      <span class="collection-header">2022</span>
     </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2022-01-23T19:33:34+08:00"
+              content="2022-01-23">
+          01-23
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2022/01/23/%E6%96%B0%E7%89%88VSCode%20git%20bash%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/" itemprop="url">
+            <span itemprop="name">新版VSCode git bash终端配置</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+    </div>
+  </div>
+  
+  
+  
 
   
 
