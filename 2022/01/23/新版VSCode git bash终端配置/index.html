@@ -32,15 +32,15 @@ daovoice('update');
  </script>
 
 
-  <meta name="description" content="当VSCode升级至1.57.1时，会出现警告提示：此项已弃用，配置默认 shell 的新推荐方法是在 #terminal.integrated.profiles.windows# 中创建一个终端配置文件，并将其配置文件名称设置为 #terminal.integrated.defaultProfile.windows# 中的默认值 官方文档给予的解决方法是将seetings.json下面的1&amp;qu">
+  <meta name="description" content="当VSCode升级至1.57.1时，会出现警告提示：此项已弃用，配置默认 shell 的新推荐方法是在 #terminal.integrated.profiles.windows# 中创建一个终端配置文件，并将其配置文件名称设置为 #terminal.integrated.defaultProfile.windows# 中的默认值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="新版VSCode git bash终端配置">
 <meta property="og:url" content="http://yunshenglu.github.io/2022/01/23/%E6%96%B0%E7%89%88VSCode%20git%20bash%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="BEIYUE">
-<meta property="og:description" content="当VSCode升级至1.57.1时，会出现警告提示：此项已弃用，配置默认 shell 的新推荐方法是在 #terminal.integrated.profiles.windows# 中创建一个终端配置文件，并将其配置文件名称设置为 #terminal.integrated.defaultProfile.windows# 中的默认值 官方文档给予的解决方法是将seetings.json下面的1&amp;qu">
+<meta property="og:description" content="当VSCode升级至1.57.1时，会出现警告提示：此项已弃用，配置默认 shell 的新推荐方法是在 #terminal.integrated.profiles.windows# 中创建一个终端配置文件，并将其配置文件名称设置为 #terminal.integrated.defaultProfile.windows# 中的默认值">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-23T11:33:34.045Z">
-<meta property="article:modified_time" content="2022-03-28T06:57:57.475Z">
+<meta property="article:modified_time" content="2022-03-30T07:41:32.911Z">
 <meta property="article:author" content="BEIYUE">
 <meta property="article:tag" content="VS Code">
 <meta name="twitter:card" content="summary">
@@ -233,7 +233,7 @@ daovoice('update');
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-28 14:57:57" itemprop="dateModified" datetime="2022-03-28T14:57:57+08:00">2022-03-28</time>
+                <time title="修改时间：2022-03-30 15:41:32" itemprop="dateModified" datetime="2022-03-30T15:41:32+08:00">2022-03-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,6 +285,8 @@ daovoice('update');
 
       
         <p>当VSCode升级至1.57.1时，会出现警告提示：<br>此项已弃用，配置默认 shell 的新推荐方法是在 #terminal.integrated.profiles.windows# 中创建一个终端配置文件，并将其配置文件名称设置为 #terminal.integrated.defaultProfile.windows# 中的默认值</p>
+<span id="more"></span>
+
 <h2 id="官方文档给予的解决方法是将seetings-json下面的"><a href="#官方文档给予的解决方法是将seetings-json下面的" class="headerlink" title="官方文档给予的解决方法是将seetings.json下面的"></a><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/integrated-terminal">官方文档</a>给予的解决方法是将seetings.json下面的</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;terminal.integrated.shell.windows&quot;</span>: <span class="string">&quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;</span>：</span><br></pre></td></tr></table></figure>
 <p>更改为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;terminal.integrated.profiles.windows&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;cmder&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;path&quot;</span>: <span class="string">&quot;C:\\WINDOWS\\System32\\cmd.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;args&quot;</span>: [<span class="string">&quot;/K&quot;</span>, <span class="string">&quot;C:\\cmder\\vendor\\bin\\vscode_init.cmd&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;terminal.integrated.defaultProfile.windows&quot;</span>: <span class="string">&quot;cmder&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
