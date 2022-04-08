@@ -1,14 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>测试1</title>
-    <url>/2022/04/02/%E6%B5%8B%E8%AF%951/</url>
-    <content><![CDATA[]]></content>
+    <title>CSS3基础</title>
+    <url>/2022/04/02/CSS3%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="css3-重投之路"><a href="#css3-重投之路" class="headerlink" title="css3 重投之路"></a>css3 重投之路</h1><ul>
+<li>CSS 可以实现：选择器  圆角效果  块阴影与文字阴影  色彩  渐变效果  个性化字体  多背景图  边框背景图  变形处理  多栏布局  媒体查询  …</li>
+</ul>
+<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><h3 id="圆角效果-border-radius"><a href="#圆角效果-border-radius" class="headerlink" title="圆角效果 border-radius"></a>圆角效果 <code>border-radius</code></h3><ol>
+<li><code>border-radius</code>  是向元素添加圆角边框</li>
+<li>使用方法：</li>
+</ol>
+<blockquote>
+<p><code>border-radius</code>:10px;  /* 所有角都使用半径为10px的圆角 */ </p>
+</blockquote>
+<blockquote>
+<p><code>border-radius</code>: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角，顺时针 */ </p>
+</blockquote>
+<ol start="3">
+<li>除了用 <code>px</code> 为单位， 还可以用百分号或者 em， 但兼容性不太好</li>
+<li>特殊使用：</li>
+</ol>
+<ul>
+<li><p>实心上半圆：把高度(<code>height</code>)设为宽度（<code>width</code>）的一半，并且只设置左上角和右上角的半径与元素的高度一致（大于也是可以的）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">   height:50px; /*是width的一半*/</span><br><span class="line">   width:100px;</span><br><span class="line">   background:#9da;</span><br><span class="line">   border-radius:50px 50px 0 0;/*半径至少设置为height的值*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>实心圆：把宽度（<code>width</code>）与高度(<code>height</code>)值设置为一致（也就是正方形），并且四个圆角值都设置为它们值的一半</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">   height:100px;/*与width设置一致*/</span><br><span class="line">   width:100px;</span><br><span class="line">   background:#9da;</span><br><span class="line">   border-radius:50px;/*四个圆角值都设置为宽度或高度值的一半</span><br><span class="line">   */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="阴影-box-shadow"><a href="#阴影-box-shadow" class="headerlink" title="阴影 box-shadow"></a>阴影 <code>box-shadow</code></h3><ol>
+<li>向盒子添加阴影， 支持添加一个或者多个</li>
+</ol>
+<blockquote>
+<p><code>box-shadow</code>: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</p>
+</blockquote>
+<blockquote>
+<p>X轴偏移量：必需，水平阴影的位置，允许负值</p>
+</blockquote>
+<blockquote>
+<p>y轴偏移量：必需，垂直阴影的位置，允许负值</p>
+</blockquote>
+<blockquote>
+<p>阴影模糊半径：可选，模糊距离</p>
+</blockquote>
+<blockquote>
+<p>阴影扩展半径：可选，阴影得尺寸</p>
+</blockquote>
+<blockquote>
+<p>阴影颜色：可选，默认为黑色</p>
+</blockquote>
+<blockquote>
+<p>投影方式：可选，（设置inset时为内部阴影方式，省略为外阴影方式） <em><strong>注意：<code>inset</code>可以写在参数的第一个或最后一个，其它位置是无效的</strong></em></p>
+</blockquote>
+<ol start="2">
+<li><p>为元素设置外阴影：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">    box-shadow:4px 2px 6px #333333; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>为元素设置内阴影：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">      box-shadow:4px 2px 6px #333333 inset; </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>添加多个阴影：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">      box-shadow:4px 2px 6px #f00, -4px -2px 6px #000, 0px </span><br><span class="line">      0px 12px 5px #33CC00 inset;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>阴影模糊半径与阴影扩展半径的区别</p>
+</li>
+</ol>
+<ul>
+<li><p>阴影模糊半径的值只能取正值，取0表示该阴影没有模糊效果，值越大阴影的边缘越模糊</p>
+</li>
+<li><p>阴影扩展半径的值可以取正负值，正值表示整个阴影延展扩大，负则缩小</p>
+</li>
+</ul>
+<h3 id="为边框加图片-border-image-与background属性类似"><a href="#为边框加图片-border-image-与background属性类似" class="headerlink" title="为边框加图片  border-image  与background属性类似"></a>为边框加图片  <code>border-image</code>  与<code>background</code>属性类似</h3><p>   <code>border-image:url(图片路径) 切割图片的宽度 图片延伸方式</code></p>
+<ul>
+<li><p>图片宽度：单位为像素，也可以使用 % ，顺时针的规律设置</p>
+</li>
+<li><p>图片延伸方式：<code>round(平铺)</code>  <code>repeat(重复)</code>  <code>stretch(拉伸)</code></p>
+</li>
+</ul>
+<blockquote>
+<p><code>repeat</code> 一直居中（开始）重复 超出部分会被裁掉</p>
+</blockquote>
+<blockquote>
+<p><code>round</code>  圆满的平铺  所以会将图片进行压缩或者延伸</p>
+</blockquote>
+<blockquote>
+<p><code>stretch</code>  就是拉伸</p>
+</blockquote>
+<ul>
+<li>代码示例：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#border-image &#123;</span><br><span class="line">       width:170px;</span><br><span class="line">       height:170px;</span><br><span class="line">       border:70px solid;</span><br><span class="line">       border-image:url</span><br><span class="line">       (borderimg.png) 70 </span><br><span class="line">       round;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="颜色-RGBA"><a href="#颜色-RGBA" class="headerlink" title="颜色  RGBA"></a>颜色  <code>RGBA</code></h2><ol>
+<li><p>R 红  G 绿  B 蓝  A 在RGB基础上增加了控制alpha透明度的参数</p>
+</li>
+<li><p>RGB的正整数取值范围为：0~255，百分数值（不是所有浏览器都支持）的取值范围为：0.0% - 100.0%，A取值范围为：0-1，不能取负值<br><code>color: rgba(R,G,B,A)</code></p>
+</li>
+<li><p>渐变色彩</p>
+</li>
+</ol>
+<ul>
+<li>径向渐变 <code>radial</code></li>
+<li>线性渐变 <code>linear</code><br><code>linear-gradient(渐变方向,颜色的起始点,颜色的结束点)</code></li>
+</ul>
+<blockquote>
+<p>颜色的起始点和结束点之间可以有多种颜色</p>
+</blockquote>
+<blockquote>
+<p>第一个参数省略时，默认为 180deg</p>
+</blockquote>
+<ul>
+<li>指定渐变方向的参数： 角度、英文表示：<br><blockquote>
+<p>从下向上：0deg  &ensp; &ensp;<em>to top</em> <br><br>从左向右：90deg  &ensp; &ensp;<em>to right</em> <br><br>从上向下：180deg  &ensp; &ensp;<em>to bottom</em> <br><br>从右向左：270deg  &ensp; &ensp;<em>to left</em> <br><br>右下角到左上角：<em>to top left</em> <br><br>左下角到右上角：<em>to top right</em> <br></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="文字与字体"><a href="#文字与字体" class="headerlink" title="文字与字体"></a>文字与字体</h2><h3 id="text-overflow-和-word-wrap"><a href="#text-overflow-和-word-wrap" class="headerlink" title="text-overflow 和 word-wrap"></a><code>text-overflow 和 word-wrap</code></h3><ol>
+<li><code>text-overflow</code> 设置是否使用一个省略标记来表示对象内文本的溢出，但只能说明用文字溢出用什么方式显示</li>
+</ol>
+<ul>
+<li><p>语法<br><code>text-overflow: clip(表示剪切) | ellipsis(表示显示省略标记)</code></p>
+</li>
+<li><p>所以要实现溢出文本显示省略号的效果，还要强制文本在一行内显示，并且溢出内容为隐藏</p>
+</li>
+<li><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">text-overflow: ellipsis;</span><br><span class="line">overflow: hidden;</span><br><span class="line">white-space: nowrap;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li><code>word-wrap</code> 也可以设置文本行为，当前行超过指定容器的边界时是否断开转行</li>
+</ol>
+<ul>
+<li>语法：<br><code>word-wrap: normal(表示控制连续的文本换行，浏览器默认值) | break-word(表示内容将在边界内换行，不常用)</code></li>
+</ul>
+<h3 id="嵌入字体-font-face"><a href="#嵌入字体-font-face" class="headerlink" title="嵌入字体 @font-face"></a>嵌入字体 <code>@font-face</code></h3><ul>
+<li>加载服务器端的字体文件，即使用户电脑里没有安装</li>
+<li>语法：设置完成后便可使用普通字体一样及设置字体样式<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">        font-family: 字体名称;</span><br><span class="line">        src: 字体在服务器上的路径;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="文本阴影-text-shadow"><a href="#文本阴影-text-shadow" class="headerlink" title="文本阴影 text-shadow"></a>文本阴影 <code>text-shadow</code></h3><ul>
+<li><p>用来设置文本的阴影效果</p>
+</li>
+<li><p>语法：<br><code>text-shadow: X-Offset Y-Offset blur color;</code></p>
+</li>
+</ul>
+<blockquote>
+<p><code>X-Offset</code>:  表示阴影的水平偏移距离，正值为向右偏移，负则反</p>
+</blockquote>
+<blockquote>
+<p><code>Y-Offset</code>:  表示阴影的垂直偏移距离，正值为向下偏移，负则反</p>
+</blockquote>
+<blockquote>
+<p><code>blur</code>:  表示阴影的模糊程度，不能为负，值越大越模糊，小则反；值为0表示不需要阴影</p>
+</blockquote>
+<blockquote>
+<p><code>color</code>:  表示阴影的颜色，可以用rgba</p>
+</blockquote>
+<ul>
+<li>语法：<br><code>text-shadow: 1px 1px 1px #ffff</code></li>
+</ul>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a><code>background-origin</code></h3><ul>
+<li>设置元素背景图片的原始起始位置</li>
+<li>语法：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">background-origin: </span><br><span class="line">         border-box(从边框开始);</span><br><span class="line">         padding-box(从内边距开始，默认);</span><br><span class="line">         content-box(从内容区域开始);</span><br></pre></td></tr></table></figure></li>
+<li><strong>如果背景不是<code>no-repeat</code>，这个属性将无效，会从边框开始显示</strong></li>
+</ul>
+<h3 id="background-clip"><a href="#background-clip" class="headerlink" title="background-clip"></a><code>background-clip</code></h3><ul>
+<li>将背景图片做适当的裁剪</li>
+<li>语法：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">background-clip: </span><br><span class="line">         border-box(从边框向外裁剪，默认);</span><br><span class="line">         padding-box(内填充);</span><br><span class="line">         content-box(从内容区域向外裁剪);</span><br><span class="line">         no-clip(不裁剪);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a><code>background-size</code></h3><h4 id="设置背景图片的大小，用长度值、百分比来显示，还可以通过cover、contain来对图片进行伸缩"><a href="#设置背景图片的大小，用长度值、百分比来显示，还可以通过cover、contain来对图片进行伸缩" class="headerlink" title="设置背景图片的大小，用长度值、百分比来显示，还可以通过cover、contain来对图片进行伸缩"></a>设置背景图片的大小，用长度值、百分比来显示，还可以通过<code>cover</code>、<code>contain</code>来对图片进行伸缩</h4><ul>
+<li>语法：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">background-size: </span><br><span class="line">         auto(默认值，不改变原来的高度和宽度);</span><br><span class="line">         长度值(px，成对出现，依此对应宽、高，当只有一个值时表示将其作为图片宽度值进行等比缩放);</span><br><span class="line">         百分比(0~1oo%，成对出现，依此对应宽、高，所在元素宽高乘以百分数得到值，当设置一个值时和auto一样表示);</span><br><span class="line">         cover(覆盖，将图片等比缩放以填满整个容器);</span><br><span class="line">         contain(容纳，等比缩放直到某一边紧贴容器边缘为止);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="multiple-backgrounds"><a href="#multiple-backgrounds" class="headerlink" title="multiple backgrounds"></a><code>multiple backgrounds</code></h3><h4 id="多重背景，缩写时用逗号隔开，分解写时如果有多个背景图片，而某一属性只有一个则表明所有背景图都应用该属性值"><a href="#多重背景，缩写时用逗号隔开，分解写时如果有多个背景图片，而某一属性只有一个则表明所有背景图都应用该属性值" class="headerlink" title="多重背景，缩写时用逗号隔开，分解写时如果有多个背景图片，而某一属性只有一个则表明所有背景图都应用该属性值"></a>多重背景，缩写时用逗号隔开，分解写时如果有多个背景图片，而某一属性只有一个则表明所有背景图都应用该属性值</h4><ul>
+<li>语法：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">background:</span><br><span class="line">         [background-color],</span><br><span class="line">         [background-image],</span><br><span class="line">         [background-position],</span><br><span class="line">         [/background-size],</span><br><span class="line">         [background-repeat],</span><br><span class="line">         [background-attachment],</span><br><span class="line">         [background-clip],</span><br><span class="line">         [background-origin], ...</span><br></pre></td></tr></table></figure></li>
+<li>可以拆解成：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">background-size: size1, size2,...</span><br><span class="line">background-origin: origin1, origin2,...</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
+<li><em><strong>注意：如果有<code>size</code>值，需要紧跟<code>position</code>并且用 / 隔开；<code>background-color</code>只能设置一个。</strong></em></li>
+</ul>
+<h2 id="css3选择器"><a href="#css3选择器" class="headerlink" title="css3选择器"></a>css3选择器</h2><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><ul>
+<li>在css2上增加了通配符的概念</li>
+<li>新增三种属性选择器：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">选择匹配元素E，且E元素定义了属性att，其属性值以val开头、结尾、包含的任何字符</span><br><span class="line">E[att^= &quot;val&quot;]    开头   </span><br><span class="line">E[att$= &quot;val&quot;]    结尾</span><br><span class="line">E[att*= &quot;val&quot;]    包含</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="结构性伪类选择器"><a href="#结构性伪类选择器" class="headerlink" title="结构性伪类选择器"></a>结构性伪类选择器</h3><h4 id="root"><a href="#root" class="headerlink" title=":root"></a><code>:root</code></h4><ul>
+<li>根选择器，匹配元素所在文档的根元素</li>
+<li>在html文档中的根元素始终是<code>&lt;html&gt;</code></li>
+<li>例：<code>:root &#123; background:orange; &#125;</code></li>
+</ul>
+<h4 id="not"><a href="#not" class="headerlink" title=":not"></a><code>:not</code></h4><ul>
+<li>否定选择器，可以选择除某个元素外的所有元素</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">input:not([type=&quot;submit&quot;])&#123;</span><br><span class="line">   border:70px solid red;</span><br><span class="line">&#125;</span><br><span class="line">// 选择除了submit按钮之外的input元素添加样式</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="empty"><a href="#empty" class="headerlink" title=":empty"></a><code>:empty</code></h4><ul>
+<li>空，选择没有任何内容的元素，包括空格等等</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">h1:empty&#123;</span><br><span class="line">   display:none;</span><br><span class="line">&#125;</span><br><span class="line">// 表示隐藏没有任何内容的p标签</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="target"><a href="#target" class="headerlink" title=":target"></a><code>:target</code></h4><ul>
+<li>目标选择器，匹配文档的url的某个标志符的目标元素</li>
+<li>单个target例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;h1&gt;&lt;a herf=&quot;#brand&quot;&gt;Brand&lt;/a&gt;&lt;h1&gt;</span><br><span class="line">&lt;div class=&quot;menuSection&quot; id=&quot;brand&quot;&gt;</span><br><span class="line">   ......</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">......</span><br><span class="line">:target&#123;</span><br><span class="line">   display:block;</span><br><span class="line">&#125;</span><br><span class="line">// 这里的target指id为brand的div对象</span><br></pre></td></tr></table></figure></li>
+<li>多个target例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;h2&gt;&lt;a href=&quot;#brand&quot;&gt;Brand&lt;/a&gt;&lt;/h2&gt;</span><br><span class="line">&lt;div class=&quot;menuSection&quot; id=&quot;brand&quot;&gt;</span><br><span class="line">   ......</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;h2&gt;&lt;a href=&quot;#jake&quot;&gt;Brand&lt;/a&gt;&lt;/h2&gt;</span><br><span class="line">&lt;div class=&quot;menuSection&quot; id=&quot;jake&quot;&gt;</span><br><span class="line">   ......</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">......</span><br><span class="line">#brand:target &#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br><span class="line">#jake:target &#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="first-child"><a href="#first-child" class="headerlink" title=":first-child"></a><code>:first-child</code></h4><ul>
+<li>选择父元素的第一个<em><strong>子元素</strong></em>的元素E</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;##&quot;&gt;Link1&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;##&quot;&gt;Link2&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;##&quot;&gt;link3&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line">......</span><br><span class="line">ol &gt; li:first-child&#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br><span class="line">// 选择了Link1，为其添加样式</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="last-child"><a href="#last-child" class="headerlink" title=":last-child"></a><code>:last-child</code></h4><ul>
+<li>选择元素最后一个子元素，和<code>:first-child</code>刚好相反</li>
+</ul>
+<h4 id="nth-child-n"><a href="#nth-child-n" class="headerlink" title=":nth-child(n)"></a><code>:nth-child(n)</code></h4><ul>
+<li>定位某个父元素的一个或多个特定的子元素，括号里面的n是参数，可以是(2n+1),…表达式，也可以是整数1，2…,或者关键字(odd,even),参数起始值始终是1</li>
+<li>当n为表达式时，从0开始计算；为0或者小于0时匹配不到元素</li>
+</ul>
+<h4 id="nth-child-n-1"><a href="#nth-child-n-1" class="headerlink" title=":nth-child(n)"></a><code>:nth-child(n)</code></h4><ul>
+<li>和<code>:nth-child(n)</code>相似，但它从某父元素的最后一个子元素开始计算，选择特定的元素</li>
+</ul>
+<h3 id="first-of-type"><a href="#first-of-type" class="headerlink" title=":first-of-type"></a><code>:first-of-type</code></h3><ul>
+<li>与<code>:first-child</code>类似，但它指定了元素类型，主要用来定位一个父元素下的某个类型的第一个子元素</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">&lt;div&gt;......&lt;/div&gt;</span><br><span class="line">&lt;p&gt;......&lt;/p&gt;</span><br><span class="line">......</span><br><span class="line">.wrapper &gt; p:first-of-type &#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="nth-of-type"><a href="#nth-of-type" class="headerlink" title=":nth-of-type"></a><code>:nth-of-type</code></h3><ul>
+<li>与<code>:nth-child(n)</code>类似，n值一样，但它只计算父元素中指定的某种类型的子元素</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.wrapper &gt; p:nth-of-type(2n)&#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br><span class="line">// 指定了.wrapper里的p标签</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="last-of-type"><a href="#last-of-type" class="headerlink" title=":last-of-type"></a><code>:last-of-type</code></h3><ul>
+<li>与<code>:first-of-type</code>类似，但它选择的是父元素下的某个类型的最后一个子元素</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.wrapper &gt; p:last-of-type&#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br><span class="line">// 选择.wrapper下所有p标签的最后一个p标签</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="nth-last-of-type-n"><a href="#nth-last-of-type-n" class="headerlink" title=":nth-last-of-type(n)"></a><code>:nth-last-of-type(n)</code></h3><ul>
+<li>与<code>:nth-last-of-type(n)</code>类似，但它的起始方向是从最后一个子元素开始的</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.wrapper &gt; p:nth-last-of-type(3)&#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="only-child"><a href="#only-child" class="headerlink" title=":only-child"></a><code>:only-child</code></h3><ul>
+<li>选择的是父元素中一个唯一的一个子元素</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;post&quot;&gt;</span><br><span class="line">   &lt;p&gt;......&lt;/p&gt;</span><br><span class="line">   &lt;p&gt;......&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;post&quot;&gt;</span><br><span class="line">   &lt;p&gt;选择的是我&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">......</span><br><span class="line">.post p:only-child &#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br><span class="line">// 选择的是.post下只有唯一一个的p标签</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="only-of-type"><a href="#only-of-type" class="headerlink" title=":only-of-type"></a><code>:only-of-type</code></h3><ul>
+<li>表示一个元素它有很多个子元素，而其中只有一种类型的子元素是唯一的，选择这个元素</li>
+<li>例如：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">   &lt;p&gt;......&lt;/p&gt;</span><br><span class="line">   &lt;p&gt;......&lt;/p&gt;</span><br><span class="line">   &lt;p&gt;......&lt;/p&gt;</span><br><span class="line">   &lt;div&gt;选择了我&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">   &lt;div&gt;选择了我&lt;/div&gt;</span><br><span class="line">   &lt;ul&gt;</span><br><span class="line">      &lt;li&gt;......&lt;/li&gt;</span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">   &lt;p&gt;......&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">......</span><br><span class="line">.wrapper &gt; div:only-of-type &#123;</span><br><span class="line">   ......</span><br><span class="line">&#125;</span><br><span class="line">// 选择只有一个div的.wrapper下的div</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
       <categories>
-        <category>测试</category>
+        <category>CSS</category>
       </categories>
       <tags>
-        <tag>工具</tag>
+        <tag>CSS3</tag>
+        <tag>边框</tag>
+        <tag>颜色</tag>
+        <tag>背景</tag>
+        <tag>选择器</tag>
       </tags>
   </entry>
 </search>
